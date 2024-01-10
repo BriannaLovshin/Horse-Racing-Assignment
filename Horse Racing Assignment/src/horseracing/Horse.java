@@ -12,6 +12,7 @@ public class Horse{
         private int number;
 
         // comment
+        // comment 2
 
         public Horse(String name, int mudRating, int grassRating, int dirtRating, double preferredLength) {
             this.name = name;
