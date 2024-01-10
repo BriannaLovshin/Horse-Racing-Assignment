@@ -11,6 +11,8 @@ public class Horse{
         private boolean finishedRace;
         private int number;
 
+        // comment
+
         public Horse(String name, int mudRating, int grassRating, int dirtRating, double preferredLength) {
             this.name = name;
             this.mudRating = mudRating;
