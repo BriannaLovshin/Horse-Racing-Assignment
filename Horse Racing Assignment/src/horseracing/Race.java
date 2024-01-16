@@ -47,9 +47,14 @@ public class Race {
         System.out.println("Race Information:");
         System.out.println("Race Surface: " + raceSurface);
         System.out.println("Race Length: " + raceLength + " furlongs");
-        System.out.println("List of Horses:");
+        // System.out.println("List of Horses:"); (removed by beatrice)
+
+        System.out.println("Horse name," + " Horse rating for Mud, Grass, Dirt," + " Preferred racing length: ");
+
         for (Horse horse : horses) {
-            System.out.println("- " + horse.getName());
+            // code modified by beatrice
+            System.out.println("- " + horse.getName() + ":  " + horse.getMudRating() + ",  " + horse.getGrassRating() + ",  " + horse.getDirtRating()); 
+            
         }
     }
 
@@ -81,8 +86,14 @@ public class Race {
                 results.add(horse);
                 horse.setRaceFinished(true);
             } else if(!horse.raceFinished()){
-                horse.incrementPosition((int)(Math.random() * 4));
+                int increment = (int)(Math.random()*4);
+                horse.incrementPosition(increment);
+                // come back and make edits to boosts accordingly
+                // horse.incrementPosition(increment);
+                
+                // horse.incrementPosition((int)(Math.random() * 4)); // << add code (split into multiple lines)
             }
+
 
             displayResults();
 
