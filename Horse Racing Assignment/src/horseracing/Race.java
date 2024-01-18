@@ -81,7 +81,7 @@ public class Race {
                 results.add(horse);
                 horse.setRaceFinished(true);
             } else if(!horse.raceFinished()){
-                horse.incrementPosition((int)(Math.random() * 4));
+                horse.incrementPosition(getIncrement(horse)); 
             }
 
             displayResults();
@@ -93,6 +93,15 @@ public class Race {
         HorseRacingHelper.stopMusic();
     }
     // Other methods for simulating the race, calculating winners, etc., can be added as needed
+
+    private int getIncrement(Horse horse) {
+        // we have racelength and racesurface(as attributes)
+        // horse.getPreferredLength()
+        // horse.getDirtRating()
+        // horse.getGrassRating()
+        // horse.getMudRating() between 2 they like the length, 3-5 okay, and 6 no
+        throw new UnsupportedOperationException("Unimplemented method 'getIncrement'");
+    }
 
     private void resetHorses() {
         for (Horse horse : horses) {
