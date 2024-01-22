@@ -77,28 +77,22 @@ public class Race {
     }
 
 
-    public void displayRaceInfo() {
-        System.out.println("Race Information:");
-        System.out.println("Race Surface: " + raceSurface);
-        System.out.println("Race Length: " + raceLength + " furlongs");
-        // System.out.println("List of Horses:"); (removed by beatrice)
+    // public void displayRaceInfo() {
+    //     System.out.println("Race Information:");
+    //     System.out.println("Race Surface: " + raceSurface);
+    //     System.out.println("Race Length: " + raceLength + " furlongs");
+    //     // System.out.println("List of Horses:"); (removed by beatrice)
 
-        System.out.println("Horse name," + " Horse rating for Mud, Grass, Dirt," + " Preferred racing length: ");
+    //     System.out.println("Horse name," + " Horse rating for Mud, Grass, Dirt," + " Preferred racing length: ");
 
-        for (Horse horse : horses) {
-            // code modified by beatrice
-            System.out.println("- " + horse.getName() + ":  " + horse.getMudRating() + ",  " + horse.getGrassRating() + ",  " + horse.getDirtRating()); 
+    //     for (Horse horse : horses) {
+    //         // code modified by beatrice
+    //         System.out.println("- " + horse.getName() + ":  " + horse.getMudRating() + ",  " + horse.getGrassRating() + ",  " + horse.getDirtRating()); 
             
-        }
-    }
+    //     }
+    // }
 
-    public void displayResults(){
-        System.out.println("\n\nRace Results");
-        System.out.println("------------");
-        for(int i=0; i<results.size(); i++){
-            System.out.println((i+1) + ": " + results.get(i).getName() + "("+results.get(i).getNumber()+")");
-        }
-    }
+
 
 
     public void startRace(){
