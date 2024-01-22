@@ -52,17 +52,18 @@ public class Race {
             String s4 = "" + horse.getMudRating();
             String s5 = "" + horse.getPreferredLength();
 
-            System.out.println("+--------------------+-----+-----+-----+-----+");
-            System.out.printf("|%-20s|%5s|%5s|%5s|%5s|\n", s1, s2, s3, s4, s5);
+            System.out.println("+--------------------+----------+----------+----------+----------+");
+            System.out.printf("|%-20s|%10s|%10s|%10s|%10s|\n", s1, s2, s3, s4, s5);
         }
-        System.out.println("+--------------------+-----+-----+-----+-----+");
+        System.out.println("+----------------------------------------------------------------+");
     }
 
     public void displayRaceInfo() {
         System.out.println("Race Information:");
         System.out.println("Race Surface: " + raceSurface);
         System.out.println("Race Length: " + raceLength + " furlongs");
-        System.out.println("List of Horses:");
+        System.out.println("+--------------------+----------+----------+----------+----------+");
+        System.out.println("|List of Horse:      |Dirt:     |Grass:    |Mud:      |Length:   |");
         // for (Horse horse : horses) {
         //     System.out.println("- " + horse.getName());
         // }
