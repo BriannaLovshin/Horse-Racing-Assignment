@@ -50,4 +50,7 @@ public class Betting {
         }
         scanner.close();
     }
+
+    // odds
+    // how much we have to give back to the people
 }
