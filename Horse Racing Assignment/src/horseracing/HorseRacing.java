@@ -21,6 +21,7 @@ public class HorseRacing {
                 System.out.println(race.getHorses().get(i).getName());
             }
             
+            
 
             race.startRace();
 
