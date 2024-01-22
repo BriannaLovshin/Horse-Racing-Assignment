@@ -43,6 +43,40 @@ public class Race {
         return raceSurface;
     }
 
+    public void displayHorseTable(){
+        for (int i = 0; i < horses.size(); i++) {   // iterates through the horses list
+            Horse horse = horses.get(i);
+            String s1 = "" + horse.getName();
+            String s2 = "" + horse.getDirtRating();
+            String s3 = "" + horse.getGrassRating();
+            String s4 = "" + horse.getMudRating();
+
+            System.out.println("+--------------------+-----+-----+-----+");
+            System.out.printf("|%-20s|%5s|%5s|%5s|\n", s1, s2, s3, s4);
+        }
+        System.out.println("+--------------------+-----+-----+-----+");
+    }
+
+    public void displayRaceInfo() {
+        System.out.println("Race Information:");
+        System.out.println("Race Surface: " + raceSurface);
+        System.out.println("Race Length: " + raceLength + " furlongs");
+        System.out.println("List of Horses:");
+        // for (Horse horse : horses) {
+        //     System.out.println("- " + horse.getName());
+        // }
+        displayHorseTable();
+    }
+
+    public void displayResults(){
+        System.out.println("\n\nRace Results");
+        System.out.println("------------");
+        for(int i=0; i<results.size(); i++){
+            System.out.println((i+1) + ": " + results.get(i).getName() + "("+results.get(i).getNumber()+")");
+        }
+    }
+
+
     public void displayRaceInfo() {
         System.out.println("Race Information:");
         System.out.println("Race Surface: " + raceSurface);
@@ -86,12 +120,7 @@ public class Race {
                 results.add(horse);
                 horse.setRaceFinished(true);
             } else if(!horse.raceFinished()){
-                int increment = (int)(Math.random()*4);
-                horse.incrementPosition(increment);
-                // come back and make edits to boosts accordingly
-                // horse.incrementPosition(increment);
-                
-                // horse.incrementPosition((int)(Math.random() * 4)); // << add code (split into multiple lines)
+                horse.incrementPosition((int)(Math.random() * 4)); 
             }
 
 

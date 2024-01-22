@@ -20,7 +20,7 @@ public class HorseRacing {
             for (int i = 0; i < race.getHorses().size(); i++){
                 System.out.println(race.getHorses().get(i).getName());
             }
-            
+
             
 
             race.startRace();
