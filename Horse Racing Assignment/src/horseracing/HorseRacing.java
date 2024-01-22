@@ -9,7 +9,7 @@ public class HorseRacing {
         HorseRacingHelper.prepareHorseRacingSimulation();
         boolean gameOver = false;
         while(!gameOver){
-            HorseRacingHelper.clearConsole();
+            HorseRacingHelper.clearConsole();    
 
             int numHorsesInRace = (int)(Math.random()*7)+5;
 
@@ -33,6 +33,9 @@ public class HorseRacing {
     }
 
     private static boolean playAgain(Scanner in) {
+
+        System.out.print("\u001B[?25l");  // Hide the cursor
+
         System.out.print("Play Again: (y/n): ");
         String result = in.nextLine();
 
@@ -40,6 +43,8 @@ public class HorseRacing {
             return true;
 
         return false;
+
+        
 
     }
 }
