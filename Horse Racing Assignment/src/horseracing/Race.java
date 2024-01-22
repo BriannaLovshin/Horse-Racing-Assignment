@@ -50,11 +50,12 @@ public class Race {
             String s2 = "" + horse.getDirtRating();
             String s3 = "" + horse.getGrassRating();
             String s4 = "" + horse.getMudRating();
+            String s5 = "" + horse.getPreferredLength();
 
-            System.out.println("+--------------------+-----+-----+-----+");
-            System.out.printf("|%-20s|%5s|%5s|%5s|\n", s1, s2, s3, s4);
+            System.out.println("+--------------------+-----+-----+-----+-----+");
+            System.out.printf("|%-20s|%5s|%5s|%5s|%5s|\n", s1, s2, s3, s4, s5);
         }
-        System.out.println("+--------------------+-----+-----+-----+");
+        System.out.println("+--------------------+-----+-----+-----+-----+");
     }
 
     public void displayRaceInfo() {
