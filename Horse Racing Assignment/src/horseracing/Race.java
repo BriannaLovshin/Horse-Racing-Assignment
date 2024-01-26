@@ -165,17 +165,7 @@ public class Race {
         System.out.println("+----------------------------------------------------------------+");
     }
 
-    public void displayRaceInfo() {
-        System.out.println("Race Information:");
-        System.out.println("Race Surface: " + raceSurface);
-        System.out.println("Race Length: " + raceLength + " furlongs");
-        System.out.println("+--------------------+----------+----------+----------+----------+");
-        System.out.println("|List of Horse:      |Dirt:     |Grass:    |Mud:      |Length:   |");
-        // for (Horse horse : horses) {
-        //     System.out.println("- " + horse.getName());
-        // }
-        displayHorseTable();
-    }
+    
 
     public void displayResults(){
         System.out.println("\n\nRace Results");
