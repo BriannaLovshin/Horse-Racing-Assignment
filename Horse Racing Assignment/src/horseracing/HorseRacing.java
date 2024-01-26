@@ -14,14 +14,9 @@ public class HorseRacing {
             int numHorsesInRace = (int)(Math.random()*7)+5;
 
             Race race = HorseRacingHelper.createRace(numHorsesInRace, HorseRacingHelper.SHORT, HorseRacingHelper.DIRT);
-            race.displayRaceInfo();
+            race.displayRaceInfo(); 
 
-            // code added (beatrice)
-            for (int i = 0; i < race.getHorses().size(); i++){
-                System.out.println(race.getHorses().get(i).getName());
-            }
-
-            
+            race.Betting();
 
             race.startRace();
 

@@ -52,5 +52,15 @@ public class Betting {
     }
 
     // odds
-    // how much we have to give back to the people
+    int lengthDifference = getPreferredLength - raceLength;
+    if(raceSurface=mud){
+       percent = getMudRating;
+    }
+    if(raceSurface=dirt){
+        percent = getDirtRating;
+    }
+    if(raceSurface=Grass){
+        percent = getGrassRating;
+    }
+    
 }
