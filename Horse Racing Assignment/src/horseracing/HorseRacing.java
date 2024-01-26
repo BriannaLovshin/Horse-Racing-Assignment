@@ -14,11 +14,9 @@ public class HorseRacing {
             int numHorsesInRace = (int)(Math.random()*7)+5;
 
             Race race = HorseRacingHelper.createRace(numHorsesInRace, HorseRacingHelper.SHORT, HorseRacingHelper.DIRT);
-            race.displayRaceInfo();
+            race.displayRaceInfo(); 
 
-            
-
-            
+            race.Betting();
 
             race.startRace();
 
