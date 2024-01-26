@@ -162,16 +162,20 @@ public class Race {
             System.out.println("+--------------------+----------+----------+----------+------------------+-----------+------------+----------+");
             System.out.printf("|%-20s|%10s|%10s|%10s|%18s|%11s|%11s|%11s|\n", s1, s2, s3, s4, s5, oddsShow, oddsPlace, oddsWin);
         }
-        System.out.println("+------------------------------------------------------------------------------------------------------------+");
+        System.out.println("+----------------------------------------------------------------+");
     }
 
-    // public void displayRaceInfo() {
-        
-    //     // for (Horse horse : horses) {
-    //     //     System.out.println("- " + horse.getName());
-    //     // }
-    //     displayHorseTable();
-    // }
+    public void displayRaceInfo() {
+        System.out.println("Race Information:");
+        System.out.println("Race Surface: " + raceSurface);
+        System.out.println("Race Length: " + raceLength + " furlongs");
+        System.out.println("+--------------------+----------+----------+----------+----------+");
+        System.out.println("|List of Horse:      |Dirt:     |Grass:    |Mud:      |Length:   |");
+        // for (Horse horse : horses) {
+        //     System.out.println("- " + horse.getName());
+        // }
+        displayHorseTable();
+    }
 
     public void displayResults(){
         System.out.println("\n\nRace Results");
@@ -180,23 +184,6 @@ public class Race {
             System.out.println((i+1) + ": " + results.get(i).getName() + "("+results.get(i).getNumber()+")");
         }
     }
-
-
-    // public void displayRaceInfo() {
-    //     System.out.println("Race Information:");
-    //     System.out.println("Race Surface: " + raceSurface);
-    //     System.out.println("Race Length: " + raceLength + " furlongs");
-    //     // System.out.println("List of Horses:"); (removed by beatrice)
-
-    //     System.out.println("Horse name," + " Horse rating for Mud, Grass, Dirt," + " Preferred racing length: ");
-
-    //     for (Horse horse : horses) {
-    //         // code modified by beatrice
-    //         System.out.println("- " + horse.getName() + ":  " + horse.getMudRating() + ",  " + horse.getGrassRating() + ",  " + horse.getDirtRating()); 
-            
-    //     }
-    // }
-
 
 
 
@@ -234,13 +221,19 @@ public class Race {
     // Other methods for simulating the race, calculating winners, etc., can be added as needed
 
     private int getIncrement(Horse horse) {
-        // we have racelength and racesurface(as attributes)
-        // horse.getPreferredLength()
-        // horse.getDirtRating()
-        // horse.getGrassRating()
-        // horse.getMudRating() between 2 they like the length, 3-5 okay, and 6 no
-        throw new UnsupportedOperationException("Unimplemented method 'getIncrement'");
+        int d = (int)(7 - Math.abs(horse.getPreferredLength() - this.raceLength));
+
+        if (raceSurface.equals("grass"))
+            d += horse.getGrassRating() / 2;
+        else if (raceSurface.equals("mud"))
+            d += horse.getMudRating() / 2;
+        else if (raceSurface.equals("dirt"))
+            d += horse.getDirtRating() / 2;
+        // this.raceLength
+        // this.raceSurface
+       return (int)(Math.random() * d);
     }
+     
 
     private void resetHorses() {
         for (Horse horse : horses) {
