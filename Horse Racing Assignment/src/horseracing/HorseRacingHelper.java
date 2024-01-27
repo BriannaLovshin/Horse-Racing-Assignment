@@ -118,18 +118,22 @@ public class HorseRacingHelper {
         return new Race(horses, raceLength, terrain);
     }
 
+    //creates a class to calculatethe ratio for show for anyhorse and uses the values percent and lengthdifference from the getOddsS class in race.java
     public static String calculateRatioShow(double percent, double lengthDifference) {
-        Double RatioAmountToOneS = (((lengthDifference + (10-percent)) *2) +2);
+        Double RatioAmountToOneS = (((lengthDifference + (10-percent)) *2) +3);
         return (double)RatioAmountToOneS + "-1";
     }
 
+    //creates a class to calculatethe ratio for place for anyhorse and uses the values percent and lengthdifference from the getOddsP class in race.java
     public static String calculateRatioPlace(double percent, double lengthDifference) {
-        Double RatioAmountToOneP = (((lengthDifference + (10-percent)) *2) +1);
+        Double RatioAmountToOneP = (((lengthDifference + (10-percent)) *2) +2);
         return (double)RatioAmountToOneP + "-1";
     }
 
+    //creates a class to calculatethe ratio for win for anyhorse and uses the values percent and lengthdifference from the getOddsW class in race.java
     public static String calculateRatioWin(double percent, double lengthDifference) {
-        Double RatioAmountToOneW = (((lengthDifference + (10-percent)) *2));
+        Double RatioAmountToOneW = (((lengthDifference + (10-percent)) *2)+1);
+        double winratio = RatioAmountToOneW; //does nothing i was just testing
         return (double)RatioAmountToOneW + "-1";
     }
 
@@ -307,16 +311,6 @@ public class HorseRacingHelper {
         // Using printf to display the formatted string with the number
         System.out.printf("|%"+(width+1) + "s","|\n");
         System.out.flush();
-    }
-   
-    public static void drawHorse(Horse horse, int width, int number){
-        // Using printf to display the formatted string with the number
-        System.out.printf("|%"+horse.getCurrentPosition()+"s%" + ((width - horse.getCurrentPosition() - 1)>1?(width - horse.getCurrentPosition() - 1):1) + "s", horse.getNumber(),"|\n");
-    }
-
-    public static void drawEmptyTrack(int width){
-        // Using printf to display the formatted string with the number
-        System.out.printf("|%"+(width-1) + "s","|\n");
     }
 
     public static void playBackgroundMusic(String filePath, boolean repeat) {
